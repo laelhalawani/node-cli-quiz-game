@@ -1,0 +1,25 @@
+{
+  "name": "cli-quiz-game",
+  "version": "0.0.0",
+  "description": "a simple quiz cli game with high scores",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "quiz",
+    "cli",
+    "game"
+  ],
+  "author": "lael.alhalawani",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "chalk-animation": "^2.0.3",
+    "figlet": "^1.6.0",
+    "gradient-string": "^2.0.2",
+    "inquirer": "^9.1.5",
+    "nanospinner": "^1.1.0"
+  }
+}
