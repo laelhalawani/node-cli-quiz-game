@@ -4,7 +4,7 @@
  It uses the most popular CLI libraries like chalk, clear, figlet, and inquirer.
 
  To run the game, clone the repo, cd into the directory and run the following commands:
-    ```
+    `
     npm i 
     npm start
-    ```
+    `
