@@ -134,6 +134,8 @@ async function askName(){
         }
     })
     playerName = answers.player_name;
+    console.clear();
+    await sleep();
 
 }
 
@@ -158,9 +160,10 @@ async function askQuestions(){
         console.log(`\n${n}/${maxN}`);
         await Question(question.body, question.answers, 0, n);
         await sleep();
+        console.clear();
         
     }
-    console.log('You win!!!');
+    endMessage(true);
 }
 
 async function handleAnswer(isCorrect){
@@ -171,8 +174,25 @@ async function handleAnswer(isCorrect){
         spinner.success({text: `Nice work ${playerName}. That's a legit answer!`})
     } else {
         spinner.error({text: `☠️ Game over! You killed an innocent process...`});
+        await endMessage(isCorrect);
+        await sleep(2000);
         process.exit(1); 
     }
+}
+
+async function endMessage(didWin=false){
+  await sleep();
+  console.clear();
+  let msg;
+  if(didWin) msg = `Congrats ${playerName}!`
+  else msg = `You're a looser!`
+
+  figlet(
+    msg,
+    (err, data) => {
+      console.log(gradient.pastel.multiline(data))
+    }
+  )
 }
 
 async function playGame(){
